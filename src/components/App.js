@@ -11,9 +11,9 @@ import { GlobalStyle } from "../style/global-style";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/goit-test-react-tweets/" element={<SharedLayout />}>
-      <Route path="/goit-test-react-tweets/" element={<Home />} />
-      <Route path="/goit-test-react-tweets/tweets" element={<Tweets />} />
+    <Route path="/goit-tech-boost-react-tweets/" element={<SharedLayout />}>
+      <Route path="/goit-tech-boost-react-tweets/" element={<Home />} />
+      <Route path="/goit-tech-boost-react-tweets/tweets" element={<Tweets />} />
       <Route path="*" element={<Home />} />
     </Route>
   )
