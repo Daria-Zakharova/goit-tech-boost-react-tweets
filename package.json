@@ -1,5 +1,6 @@
 {
   "name": "goit-react-tweets1",
+  "homepage": "https://daria-zakharova.github.io/goit-tech-boost-react-tweets/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
