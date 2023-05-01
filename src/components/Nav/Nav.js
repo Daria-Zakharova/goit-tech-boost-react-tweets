@@ -12,7 +12,7 @@ export const Nav = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/goit-tech-boost-react-tweets/tweets">Tweets</NavLink>
+          <NavLink to="/goit-tech-boost-react-tweets/tweets/">Tweets</NavLink>
         </li>
       </ul>
     </NavWrap>
