@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/goit-tech-boost-react-tweets/static/css/main.17654e45.css",
-    "main.js": "/goit-tech-boost-react-tweets/static/js/main.b89eb6be.js",
+    "main.js": "/goit-tech-boost-react-tweets/static/js/main.3024ee5d.js",
     "static/media/gold-crown.png": "/goit-tech-boost-react-tweets/static/media/gold-crown.dfee72461495637d0a21.png",
     "index.html": "/goit-tech-boost-react-tweets/index.html",
     "main.17654e45.css.map": "/goit-tech-boost-react-tweets/static/css/main.17654e45.css.map",
-    "main.b89eb6be.js.map": "/goit-tech-boost-react-tweets/static/js/main.b89eb6be.js.map"
+    "main.3024ee5d.js.map": "/goit-tech-boost-react-tweets/static/js/main.3024ee5d.js.map"
   },
   "entrypoints": [
     "static/css/main.17654e45.css",
-    "static/js/main.b89eb6be.js"
+    "static/js/main.3024ee5d.js"
   ]
 }
