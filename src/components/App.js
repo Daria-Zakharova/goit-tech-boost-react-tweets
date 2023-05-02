@@ -11,12 +11,13 @@ import { GlobalStyle } from "../style/global-style";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/goit-tech-boost-react-tweets/" element={<SharedLayout />}>
-      <Route path="/goit-tech-boost-react-tweets/" element={<Home />} />
-      <Route path="/goit-tech-boost-react-tweets/tweets" element={<Tweets />} />
+    <Route path="/" element={<SharedLayout />}>
+      <Route path="/" element={<Home />} />
+      <Route path="/tweets" element={<Tweets />} />
       <Route path="*" element={<Home />} />
     </Route>
-  )
+  ),
+  { basename: "/goit-tech-boost-react-tweets" }
 );
 
 export const App = () => {

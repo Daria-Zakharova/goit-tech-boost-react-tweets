@@ -7,12 +7,12 @@ export const Nav = () => {
     <NavWrap>
       <ul>
         <li>
-          <NavLink to="/goit-tech-boost-react-tweets/" end>
+          <NavLink to="/" end>
             <img src={logo} alt="logo" style={{ maxHeight: "30px" }} />
           </NavLink>
         </li>
         <li>
-          <NavLink to="/goit-tech-boost-react-tweets/tweets/">Tweets</NavLink>
+          <NavLink to="/tweets">Tweets</NavLink>
         </li>
       </ul>
     </NavWrap>
