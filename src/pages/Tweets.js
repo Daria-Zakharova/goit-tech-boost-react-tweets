@@ -8,6 +8,7 @@ import { Filter } from "../components/Filter/Filter";
 import { subscription } from "../utils/subscription";
 import { HomeLink } from "../components/HomeLink/HomeLink";
 import { Loader } from "../components/Loader/Loader";
+import { ScrollToToBtn } from "../components/ScrollToTopBtn/ScrollToTopBtn";
 
 export const Tweets = () => {
   const { width } = useWindowDimensions();
@@ -86,6 +87,7 @@ export const Tweets = () => {
           }}
         />
       )}
+      <ScrollToToBtn />
     </PageWrap>
   );
 };
