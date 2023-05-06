@@ -2,13 +2,14 @@ import styled from "styled-components";
 import { transition } from "../../style/transition";
 
 export const Btn = styled.button`
-  display: block;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
   width: 196px;
   height: 50px;
   margin: 0 auto;
   padding: 14px;
 
-  text-align: center;
   font-weight: 600;
   text-transform: uppercase;
 

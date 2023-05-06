@@ -21,7 +21,6 @@ export const TweetCardWrap = styled.div`
   ${({ variant }) =>
     variant === "rating" &&
     css`
-      margin: 0 auto;
       background-image: url(${rateBgImage}), var(--bg-rate-card);
       animation: rotate-scale-up 0.5s linear backwards;
       background-position: top 28px center, center, center;

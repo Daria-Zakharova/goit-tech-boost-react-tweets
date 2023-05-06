@@ -1,17 +1,22 @@
-import styled from 'styled-components';
-import { mediaQuery } from '../../style/breakpoints';
-import { transition } from '../../style/transition';
+import styled from "styled-components";
+import { mediaQuery } from "../../style/breakpoints";
+import { transition } from "../../style/transition";
 
 export const SearchSelectWrap = styled.div`
   display: flex;
-  gap: 30px;
+  gap: 10px;
   justify-content: center;
   margin-bottom: 10px;
+
+  ${mediaQuery("tab")} {
+    gap: 30px;
+  }
 `;
 
 export const SearchSelect = styled.div`
-  width: 14var (--border-rad-btn);
-  ${mediaQuery('tab')} {
+  width: 150px;
+  border-radius: var (--border-rad-btn);
+  ${mediaQuery("tab")} {
     width: 175px;
   }
 `;
@@ -29,14 +34,14 @@ export const SelectHead = styled.div`
   padding: 8px 14px;
   border-radius: ${({ isOpen }) =>
     isOpen
-      ? 'var(--border-rad-btn) var(--border-rad-btn) 0 0'
-      : 'var(--border-rad-btn)'};
+      ? "var(--border-rad-btn) var(--border-rad-btn) 0 0"
+      : "var(--border-rad-btn)"};
   color: var(--color-txt-btn);
   background-color: var(--color-btn-sec);
   text-transform: uppercase;
-  transition: ${transition('border-radius')};
+  transition: ${transition("border-radius")};
 
-  ${mediaQuery('tab')} {
+  ${mediaQuery("tab")} {
     height: 40px;
   }
 `;
@@ -51,11 +56,15 @@ export const SelectUnfoldBtn = styled.button`
   cursor: pointer;
   background-color: transparent;
   color: var(--color-accent);
-  transform: ${({ isOpen }) => (isOpen ? 'rotate(180deg)' : 'rotate(0)')};
-  transition: ${transition('transform')};
+  transform: ${({ isOpen }) => (isOpen ? "rotate(180deg)" : "rotate(0)")};
+  transition: ${transition("transform", "backdrop-filter")};
 
-  ${mediaQuery('tab')} {
+  ${mediaQuery("tab")} {
     height: 40px;
+  }
+
+  &:hover {
+    backdrop-filter: brightness(1.1);
   }
 `;
 
@@ -68,8 +77,8 @@ export const SelectOptionsList = styled.ul`
   background-color: var(--color-btn);
   border: 1px solid var(--color-accent);
   border-radius: 0 0 var(--border-rad-btn) var(--border-rad-btn);
-  transform: translateY(${props => (props.isOpen ? '0' : '-100%')});
-  transition: ${transition('transform')};
+  transform: translateY(${(props) => (props.isOpen ? "0" : "-100%")});
+  transition: ${transition("transform")};
 `;
 
 export const SelectOptionStyled = styled.li`
@@ -85,7 +94,7 @@ export const SelectOptionStyled = styled.li`
       background-color: var(--color-btn-sec);
     }
 
-    ${mediaQuery('tab')} {
+    ${mediaQuery("tab")} {
       height: 40px;
     }
   }

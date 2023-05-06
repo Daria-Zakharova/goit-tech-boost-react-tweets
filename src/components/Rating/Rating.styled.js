@@ -4,6 +4,9 @@ import { mediaQuery } from "../../style/breakpoints";
 
 export const RatingWrap = styled.div`
   padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-image: var(--bg-rating), url(${bgImage});
 
   ${mediaQuery("tab")} {

@@ -7,6 +7,7 @@ import { useWindowDimensions } from "../hooks/useWindowDimensions";
 import { Filter } from "../components/Filter/Filter";
 import { subscription } from "../utils/subscription";
 import { HomeLink } from "../components/HomeLink/HomeLink";
+import { Loader } from "../components/Loader/Loader";
 
 export const Tweets = () => {
   const { width } = useWindowDimensions();
@@ -14,6 +15,7 @@ export const Tweets = () => {
   const [page, setPage] = useState(1);
   const [totalTweets, setTotalTweets] = useState([]);
   const [totalAmount, setTotalAmount] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   const [tweets, setTweets] = useState([]);
   const filterOptions = ["show all", "following", "follow"];
   const [filter, setFilter] = useState(filterOptions[0]);
@@ -44,13 +46,23 @@ export const Tweets = () => {
 
   // мало б забирати інфу з беку і для фільтрованих твітів, але чесно не зрозуміла, як там налаштувати фільтр
   useEffect(() => {
-    const loadFirstTweets = async () => {
+    const loadTweets = async () => {
       const newTweets = await getTweets({ page, limit });
       setTweets((prevTweets) =>
         page === 1 ? newTweets : [...prevTweets, ...newTweets]
       );
+      setIsLoading(false);
     };
-    filter === "show all" && loadFirstTweets();
+
+    try {
+      if (filter === "show all") {
+        setIsLoading(true);
+        loadTweets();
+      }
+    } catch (e) {
+      console.log(e.message);
+      setIsLoading(false);
+    }
   }, [limit, page, filter]);
 
   return (
@@ -63,9 +75,10 @@ export const Tweets = () => {
           setFilter(option);
         }}
       />
-      <TweetList tweets={tweets} />
+      {isLoading && page === 1 ? <Loader /> : <TweetList tweets={tweets} />}
       {totalAmount > tweets.length && (
         <Button
+          isLoading={isLoading}
           isActive={true}
           btnTxt="load more"
           onClick={async () => {

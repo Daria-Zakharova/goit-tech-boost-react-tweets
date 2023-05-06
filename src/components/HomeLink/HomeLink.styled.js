@@ -8,13 +8,16 @@ export const ButtonHome = styled(Btn)`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 5px;
   position: absolute;
   top: 120px;
+  padding: 14px 10px;
 
   ${mediaQuery("tab")} {
     height: 40px;
     top: 145px;
+    padding: 14px;
+    gap: 10px;
   }
   ${mediaQuery("desk")} {
     top: 170px;
