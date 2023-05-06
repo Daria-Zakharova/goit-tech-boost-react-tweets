@@ -3,7 +3,7 @@ import bgImage from "../../img/bg.png";
 import { mediaQuery } from "../../style/breakpoints";
 
 export const RatingWrap = styled.div`
-  padding: 20px;
+  padding: 40px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
