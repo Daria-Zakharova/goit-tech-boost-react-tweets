@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { mediaQuery } from "../../style/breakpoints";
 import { transition } from "../../style/transition";
 
@@ -22,8 +22,10 @@ export const SearchSelect = styled.div`
 `;
 
 export const SelectLabel = styled.span`
-  font-weight: 500;
   color: var(--color-accent);
+  ${mediaQuery("mob")} {
+    display: none;
+  }
 `;
 
 export const SelectHead = styled.div`
@@ -36,13 +38,15 @@ export const SelectHead = styled.div`
     isOpen
       ? "var(--border-rad-btn) var(--border-rad-btn) 0 0"
       : "var(--border-rad-btn)"};
+  text-transform: uppercase;
+  font-size: 18px;
   color: var(--color-txt-btn);
   background-color: var(--color-btn-sec);
-  text-transform: uppercase;
   transition: ${transition("border-radius")};
 
   ${mediaQuery("tab")} {
     height: 40px;
+    font-size: 20px;
   }
 `;
 
@@ -56,8 +60,6 @@ export const SelectUnfoldBtn = styled.button`
   cursor: pointer;
   background-color: transparent;
   color: var(--color-accent);
-  transform: ${({ isOpen }) => (isOpen ? "rotate(180deg)" : "rotate(0)")};
-  transition: ${transition("transform", "backdrop-filter")};
 
   ${mediaQuery("tab")} {
     height: 40px;
@@ -66,6 +68,18 @@ export const SelectUnfoldBtn = styled.button`
   &:hover {
     backdrop-filter: brightness(1.1);
   }
+
+  svg {
+    transition: ${transition("transform", "backdrop-filter")};
+  }
+
+  ${({ isOpen }) =>
+    isOpen &&
+    css`
+      svg {
+        transform: rotate(180deg);
+      }
+    `}
 `;
 
 export const SelectDropdown = styled.form`

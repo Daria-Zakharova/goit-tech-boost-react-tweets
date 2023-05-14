@@ -17,10 +17,15 @@ export const ScrollTop = styled.button`
 
     aspect-ratio: 1;
     border-radius: 50%;
-    border: 1px solid currentColor;
+    border: 2px solid currentColor;
     background: #fff;
     color: var(--color-accent);
+    box-shadow: var(--shd-btn);
     animation: appear 350ms linear;
+
+    &:hover {
+      box-shadow: var(--shd-btn-hover);
+    }
 
     @keyframes appear {
       0% {
